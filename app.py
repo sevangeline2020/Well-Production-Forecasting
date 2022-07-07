@@ -34,7 +34,7 @@ st.subheader('This project aims at replacing the traditional DCA and discusses t
 
 st.header('#2) SAMPLE DATASET')
 column =['Month','Production_rate']
-data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv', names = column)
+data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv', names = column, on_bad_lines='skip')
 st.table(data)
 
 
