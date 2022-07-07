@@ -4,7 +4,7 @@ numpy
 matplotlib
 pandas
 datetime
-statsmodels.tsa.stattools
+statsmodels
 adfuller
-statsmodels.tsa.arima_model
+statsmodels-tsa-arima_model
 ARIMA
