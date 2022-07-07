@@ -28,13 +28,6 @@ with st.expander("brief explanation"):
          The major application of DCA in the industry today is still based on equations and curves described by Arps. Arps applied the equation of Hyperbola to define three general equations to model production declines.
          """)
 
-Page= set_page_config(
-     page_title="PROJECT",
-     page_icon="🧊",
-     layout="wide",
-     initial_sidebar_state="expanded",
-     )
-
 st.header('#1) PROBLEM STATEMENT')
 st.subheader('This project aims at replacing the traditional DCA and discusses the application of the widely accepted concepts of time series analysis for forecasting well production data by analyzing statistical trends from historical data.')
 
