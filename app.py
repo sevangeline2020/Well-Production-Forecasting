@@ -29,7 +29,7 @@ with st.expander("brief explanation"):
          """)
      st.image("https://github.com/sevangeline2020/Well-Production-Forecasting/blob/main/OIL%20WELL.jpg")
 
-st.set_page_config(
+Page= set_page_config(
      page_title="PROJECT",
      page_icon="🧊",
      layout="wide",
@@ -70,11 +70,7 @@ st.header('DICKYFULLER TEST')
 from statsmodels.tsa.stattools import adfuller
 
 def test_stationarity(timeseries):
-    
-    rolmean = timeseries.rolling(window=10).mean()
-    rolstd = timeseries.rolling(window=10).std()
-   
-    
+     
     fig, ax = plt.subplots(figsize=(10,6))
     st.pyplot(fig, figsize=(10, 6))
     orig = plt.plot(timeseries, label ='Original')
