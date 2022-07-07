@@ -2,7 +2,6 @@ streamlit
 pandas
 numpy
 matplotlib
-warnings
 pandas
 read_csv
 datetime
