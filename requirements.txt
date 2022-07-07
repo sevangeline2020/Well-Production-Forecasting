@@ -3,7 +3,6 @@ pandas
 numpy
 matplotlib
 pandas
-read_csv
 datetime
 pyplot
 pandas.plotting
