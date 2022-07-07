@@ -38,7 +38,7 @@ data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv', names = column),
 st.table(data)
 
 
-st.header('DATETIME ANALYSIS')
+st.header('**DATETIME ANALYSIS**')
 dateparse = lambda dates: pd.datetime.strptime(dates, '%m/%d/%Y')
 data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv',names = column, parse_dates=['Month'], index_col=['Month'],date_parser=dateparse),
 st.line_chart(data)
