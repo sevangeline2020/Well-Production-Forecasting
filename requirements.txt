@@ -4,7 +4,6 @@ numpy
 matplotlib
 pandas
 datetime
-autocorrelation_plot
 statsmodels.tsa.stattools
 adfuller
 statsmodels.tsa.arima_model
