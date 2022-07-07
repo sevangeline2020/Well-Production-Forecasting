@@ -2,7 +2,6 @@ streamlit
 pandas
 numpy
 matplotlib
-rcParams
 warnings
 pandas
 read_csv
