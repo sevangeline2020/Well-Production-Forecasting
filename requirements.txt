@@ -5,6 +5,4 @@ matplotlib
 pandas
 datetime
 statsmodels
-statsmodels-stattools
-statsmodels-tsa-arima_model
 ARIMA
