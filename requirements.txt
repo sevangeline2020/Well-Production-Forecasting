@@ -5,6 +5,16 @@ matplotlib
 pandas
 datetime
 statsmodels
-streamlit-set_page_config
+argon2-cffi
+argon2-cffi-bindings
+importlib-metadata
+intel-openmp
+nest-asyncio
+pandas-datareader
+pandas-profiling
+prompt-toolkit
+python-dateutil
+pytz-deprecation-shim
+scikit-learn
 tangled-up-in-unicode
 typing-extensions
