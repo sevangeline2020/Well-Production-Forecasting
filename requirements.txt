@@ -1,0 +1,17 @@
+streamlit
+pandas
+numpy
+matplotlib
+matplotlib.pylab
+rcParams
+warnings
+pandas
+read_csv
+datetime
+pyplot
+pandas.plotting
+autocorrelation_plot
+statsmodels.tsa.stattools
+adfuller
+statsmodels.tsa.arima_model
+ARIMA
