@@ -27,7 +27,6 @@ with st.expander("brief explanation"):
          The basic assumption in this procedure is that whatever causes controlled the trend of a curve in the past will continue to govern its trend in the future in a uniform manner. J.J. Arps collected these ideas into a comprehensive set of equations defining the exponential, hyperbolic and harmonic declines.(Representative figure below)
          The major application of DCA in the industry today is still based on equations and curves described by Arps. Arps applied the equation of Hyperbola to define three general equations to model production declines.
          """)
-     st.image("https://github.com/sevangeline2020/Well-Production-Forecasting/blob/main/OIL%20WELL.jpg")
 
 Page= set_page_config(
      page_title="PROJECT",
