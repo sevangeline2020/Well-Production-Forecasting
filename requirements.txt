@@ -6,3 +6,5 @@ pandas
 datetime
 statsmodels
 streamlit-set_page_config
+tangled-up-in-unicode
+typing-extensions
