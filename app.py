@@ -34,13 +34,13 @@ st.subheader('This project aims at replacing the traditional DCA and discusses t
 
 st.header('**SAMPLE DATASET**')
 column = ['Month','Production_rate']
-data = pd.read_csv(r"C:\Users\Dell\Downloads\ProductionData2.xlsx - Sheet1.csv", names = column);
+data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv", names = column);
 st.table(data)
 
 
 st.header('**DATETIME ANALYSIS**')
 dateparse = lambda dates: pd.datetime.strptime(dates, '%m/%d/%Y')
-data = pd.read_csv(r"C:\Users\Dell\Downloads\ProductionData2.xlsx - Sheet1.csv",names = column, parse_dates=['Month'], index_col=['Month'],date_parser=dateparse);
+data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv",names = column, parse_dates=['Month'], index_col=['Month'],date_parser=dateparse);
 st.line_chart(data)
 st.pyplot()
 
