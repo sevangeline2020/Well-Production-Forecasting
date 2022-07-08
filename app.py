@@ -53,10 +53,10 @@ st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
 ts = data['Production_rate'][1:]
 fig, ax = plt.subplots()
 fig, ax = plt.subplots(figsize=(10,6))
-ax.set_title('Oil Production Decline')
-ax.set_xlabel('Year')
-ax.set_ylabel('Production rate (Barrels per Day)')
-ax.line_chart(ts)
+title = 'Oil Production Decline'
+xlabel = 'Year'
+ylabel = 'Production rate (Barrels per Day)'
+st.line_chart(ts)
 st.pyplot()
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
