@@ -52,11 +52,10 @@ st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
 #Let's visualize the production trend available for the well.
 fig, ax = plt.subplots()
 fig, ax = plt.subplots(figsize=(10,6))
+plt.plot(ts)
 ax.set_title('Oil Production Decline')
 ax.set_xlabel('Year')
 ax.set_ylabel('Production rate (Barrels per Day)')
-st.line_chart(data)
-st.pyplot()
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.header('DICKYFULLER TEST')
