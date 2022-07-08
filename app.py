@@ -66,10 +66,9 @@ def test_stationarity(timeseries):
     orig = plt.plot(timeseries, label ='Original')
     mean = plt.plot(rolmean, label = 'Rolling Mean')
     std = plt.plot(rolstd, label = 'Rolling Standard Deviation')
-    st.pyplot.legend(loc='best')
-    st.pyplot.title('Rolling Mean & Standard Deviation')
-    st.pyplot(block=False)
-    
+    st.plot.legend(loc='best')
+    st.plot.title('Rolling Mean & Standard Deviation')
+    st.plot(block=False)
 
     #Perform Dickey-Fuller test:
     st.write('Results of Dickey-Fuller Test:')
@@ -77,8 +76,9 @@ def test_stationarity(timeseries):
     dfoutput = pd.Series(dftest[0:4], index=['Test Statistic','p-value','#Lags Used','Number of Observations Used'])
     for key,value in dftest[4].items():
         dfoutput['Critical Value (%s)'%key] = value
-    print(dfoutput)
+    st.write(dfoutput)
 test_stationarity(ts)
+st.pyplot()
 
 
 st.header('TREND ELIMINATION-MOVING AVERAGE APPROACH')
