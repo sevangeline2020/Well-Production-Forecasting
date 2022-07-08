@@ -50,6 +50,7 @@ st.pyplot()
 
 st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
 #Let's visualize the production trend available for the well.
+ts = data['Production_rate'][1:]
 fig, ax = plt.subplots()
 fig, ax = plt.subplots(figsize=(10,6))
 plt.plot(ts)
