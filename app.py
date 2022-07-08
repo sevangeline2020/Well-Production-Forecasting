@@ -56,7 +56,7 @@ fig, ax = plt.subplots(figsize=(10,6))
 ax.set_title('Oil Production Decline')
 ax.set_xlabel('Year')
 ax.set_ylabel('Production rate (Barrels per Day)')
-st.line_chart(ts)
+ax.line_chart(ts)
 st.pyplot()
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
