@@ -51,13 +51,11 @@ st.pyplot()
 st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
 #Let's visualize the production trend available for the well.
 ts = data['Production_rate'][1:]
-fig, ax = plt.subplots(figsize=(10,6))
 title = 'Oil Production Decline'
 xlabel = 'Year'
 ylabel = 'Production rate (Barrels per Day)'
 st.line_chart(ts)
 st.pyplot()
-st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.header('DICKYFULLER TEST')
 from statsmodels.tsa.stattools import adfuller
