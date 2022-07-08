@@ -54,7 +54,8 @@ ts = data['Production_rate'][1:]
 title = plt.title('Oil Production Decline')
 xlabel = plt.xlabel('Year')
 ylabel = plt.ylabel('Production rate (Barrels per Day)')
-st.pyplot(ts)
+line_chart(ts)
+st.pyplot()
 
 st.header('DICKYFULLER TEST')
 from statsmodels.tsa.stattools import adfuller
