@@ -46,8 +46,7 @@ st.pyplot()
 
 st.header('AUTOCORRELATION PLOT')
 from pandas.plotting import autocorrelation_plot
-st.pyplot.autocorrelation_plot(data)
-st.pyplot_chart()
+st.pyplot_chart(data)
 
 
 st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
