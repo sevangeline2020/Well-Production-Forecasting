@@ -51,9 +51,6 @@ st.pyplot()
 st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
 #Let's visualize the production trend available for the well.
 ts = data['Production_rate'][1:]
-title = plt.title('Oil Production Decline')
-xlabel = plt.xlabel('Year')
-ylabel = plt.ylabel('Production rate (Barrels per Day)')
 st.line_chart(ts)
 st.pyplot()
 
