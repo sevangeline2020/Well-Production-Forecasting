@@ -55,7 +55,7 @@ fig, ax = plt.subplots(figsize=(10,6))
 ax.set_title('Oil Production Decline')
 ax.set_xlabel('Year')
 ax.set_ylabel('Production rate (Barrels per Day)')
-st.pyplot(fig)
+st.pyplot(data)
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.header('DICKYFULLER TEST')
