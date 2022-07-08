@@ -51,9 +51,9 @@ st.pyplot()
 st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
 #Let's visualize the production trend available for the well.
 ts = data['Production_rate'][1:]
-title = 'Oil Production Decline'
-xlabel = 'Year'
-ylabel = 'Production rate (Barrels per Day)'
+title = plt.plot('Oil Production Decline')
+xlabel = plt.plot('Year')
+ylabel = plt.plot('Production rate (Barrels per Day)')
 st.line_chart(ts)
 st.pyplot()
 
@@ -61,6 +61,8 @@ st.header('DICKYFULLER TEST')
 from statsmodels.tsa.stattools import adfuller
 
 def test_stationarity(timeseries):
+    rolmean = timeseries.rolling(window=10).mean()
+    rolstd = timeseries.rolling(window=10).std()
      
     fig, ax = plt.subplots(figsize=(10,6))
     st.pyplot(fig, figsize=(10, 6))
@@ -79,7 +81,7 @@ def test_stationarity(timeseries):
     for key,value in dftest[4].items():
         dfoutput['Critical Value (%s)'%key] = value
     print(dfoutput)
-test_stationarity()
+test_stationarity(ts)
 
 
 st.header('TREND ELIMINATION-MOVING AVERAGE APPROACH')
