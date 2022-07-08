@@ -37,17 +37,11 @@ column = ['Month','Production_rate']
 data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv", names = column);
 st.table(data)
 
-
 st.header('**DATETIME ANALYSIS**')
 dateparse = lambda dates: pd.datetime.strptime(dates, '%m/%d/%Y')
 data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv",names = column, parse_dates=['Month'], index_col=['Month'],date_parser=dateparse);
 st.line_chart(data)
 st.pyplot()
-
-st.header('AUTOCORRELATION PLOT')
-from pandas.plotting import autocorrelation_plot
-st.pyplot_chart(data)
-
 
 st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
 #Let's visualize the production trend available for the well.
