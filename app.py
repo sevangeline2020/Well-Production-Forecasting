@@ -66,7 +66,7 @@ def test_stationarity(timeseries):
     orig = plt.plot(timeseries, label ='Original')
     mean = plt.plot(rolmean, label = 'Rolling Mean')
     std = plt.plot(rolstd, label = 'Rolling Standard Deviation')
-    st.plot.legend(loc='best')
+    st.pyplot.legend(loc='best')
     st.plot.title('Rolling Mean & Standard Deviation')
     st.plot(block=False)
 
@@ -77,7 +77,7 @@ def test_stationarity(timeseries):
     for key,value in dftest[4].items():
         dfoutput['Critical Value (%s)'%key] = value
     st.write(dfoutput)
-test_stationarity(ts)
+st.test_stationarity(ts)
 st.pyplot()
 
 
