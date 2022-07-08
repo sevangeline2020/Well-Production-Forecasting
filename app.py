@@ -53,10 +53,10 @@ st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
 ts = data['Production_rate'][1:]
 fig, ax = plt.subplots()
 fig, ax = plt.subplots(figsize=(10,6))
-plt.plot(ts)
 ax.set_title('Oil Production Decline')
 ax.set_xlabel('Year')
 ax.set_ylabel('Production rate (Barrels per Day)')
+st.pyplot(ts)
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.header('DICKYFULLER TEST')
