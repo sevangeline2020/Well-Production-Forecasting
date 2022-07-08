@@ -54,7 +54,7 @@ ts = data['Production_rate'][1:]
 title = plt.title('Oil Production Decline')
 xlabel = plt.xlabel('Year')
 ylabel = plt.ylabel('Production rate (Barrels per Day)')
-st.line_chart(ts)
+st.plt(ts)
 st.pyplot()
 
 st.header('DICKYFULLER TEST')
