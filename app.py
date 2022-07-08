@@ -43,6 +43,11 @@ data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv",names = column, parse_dat
 st.line_chart(data)
 st.pyplot()
 
+st.header('**AUTOCORRELATION PLOT**')
+from pandas.plotting import autocorrelation_plot
+autocorrelation_plot(data)
+st.pyplot()
+
 st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
 #Let's visualize the production trend available for the well.
 fig, ax = plt.subplots()
