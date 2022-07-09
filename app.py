@@ -50,6 +50,8 @@ ts_log = np.log(ts)
 fig, ax = plt.subplots(figsize=(10,6))
 ax.plot(ts_log, label= 'log(Original)')
 st.pyplot()
+st.set_option('deprecation.showPyplotGlobalUse', False)
+showPyplotGlobalUse = False
 
 moving_avg = ts_log.rolling(10).mean()
 fig, ax = plt.subplots(figsize=(10,6))
