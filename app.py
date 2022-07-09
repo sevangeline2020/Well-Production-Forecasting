@@ -55,7 +55,7 @@ ts = data['Production_rate'][1:]
 st.line_chart(ts)
 st.pyplot()
 
-
+st.header('**DICKEY FULLER TEST**')
 def test_stationarity(timeseries):
     
     rolmean = timeseries.rolling(window=10).mean()
