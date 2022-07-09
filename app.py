@@ -68,10 +68,6 @@ ax.plot(moving_avg, color='red')
 ax.plot(ts_log)
 st.pyplot()
 
-ts_log_ewma_diff = ts_log - exp_weighted_avg
-ax.plot(test_stationarity(ts_log_ewma_diff))
-st.pyplot()
-
 ts_log_moving_avg_diff = ts_log - moving_avg
 ts_log_moving_avg_diff.dropna(inplace =True)
 fig, ax = plt.subplots(figsize=(10,6))
@@ -86,7 +82,7 @@ ax.plot(exp_weighted_avg, color ='red')
 st.pyplot()
 
 ts_log_ewma_diff = ts_log - exp_weighted_avg
-st.line_chart(ts_log_ewma_diff)
+ax.plot(ts_log_ewma_diff)
 st.pyplot()
 
 ts_log_diff = ts_log - ts_log.shift()
@@ -95,6 +91,11 @@ ax.plot(ts_log_diff)
 ax.plot(ts_log)
 ax.plot(ts_log.shift())
 ax.plot(ts_log.diff())
+st.pyplot()
+
+ts_log_diff.dropna(inplace=True)
+fig, ax = plt.subplots(figsize=(10,6))
+ax.plot(ts_log_diff)
 st.pyplot()
 
 st.header('DECLINE CURVE FORECASTING-ARIMA')
