@@ -14,7 +14,7 @@ from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.stattools import acf, pacf
 
 primaryColor="#F63366"
-backgroundColor="#oooooo"
+backgroundColor="#OOOOOO"
 secondaryBackgroundColor="#F0F2F6"
 textColor="#262730"
 font="sans serif"
