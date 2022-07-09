@@ -55,26 +55,31 @@ st.line_chart(ts)
 st.pyplot()
 
 st.header('**DICKYFULLER TEST**')
+st.title('Rolling Mean & Standard Deviation')
+rolmean = timeseries.rolling(window=10).mean()
+rolstd = timeseries.rolling(window=10).std()
 def test_stationarity(timeseries):
+    
     rolmean = timeseries.rolling(window=10).mean()
     rolstd = timeseries.rolling(window=10).std()
-     
-    fig, ax = plt.figure(figsize=(10,6))
-    st.pyplot(fig, figsize=(10, 6))
+   
+    
+    plt.figure(figsize=(10,6))
     orig = plt.plot(timeseries, label ='Original')
     mean = plt.plot(rolmean, label = 'Rolling Mean')
     std = plt.plot(rolstd, label = 'Rolling Standard Deviation')
-    st.legend(loc='best')
-    st.title('Rolling Mean & Standard Deviation')
-    st.write('Results of Dickey-Fuller Test:')
+    plt.legend(loc='best')
+    plt.title('Rolling Mean & Standard Deviation')
+    plt.show(block=False)
+    
+    #Perform Dickey-Fuller test:
+    print('Results of Dickey-Fuller Test:')
     dftest = adfuller(timeseries, autolag='AIC')
     dfoutput = pd.Series(dftest[0:4], index=['Test Statistic','p-value','#Lags Used','Number of Observations Used'])
     for key,value in dftest[4].items():
         dfoutput['Critical Value (%s)'%key] = value
-    st.write(dfoutput)
-adfuller(ts)
-st.line_chart(ts)
-st.pyplot()
+    st.line_chart(dfoutput)
+
 
 
 st.header('TREND ELIMINATION-MOVING AVERAGE APPROACH')
