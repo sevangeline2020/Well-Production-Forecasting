@@ -56,8 +56,6 @@ st.line_chart(ts)
 st.pyplot()
 
 fig, ax = plt.subplots(figsize=(10,6))
-rolmean = pd.timeseries.rolling(window=10,center=False).mean()
-rolstd = pd.timeseries.rolling(window=10,center=False).std()
 orig = ax.plot(timeseries, label ='Original')
 mean = ax.plot(rolmean, label = 'Rolling Mean')
 std = ax.plot(rolstd, label = 'Rolling Standard Deviation')
