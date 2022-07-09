@@ -18,4 +18,3 @@ pytz-deprecation-shim
 scikit-learn
 tangled-up-in-unicode
 typing-extensions
-streamlit-option-menu
