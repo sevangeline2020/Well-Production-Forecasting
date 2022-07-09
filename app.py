@@ -14,7 +14,7 @@ from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.stattools import acf, pacf
 
 primaryColor="#F63366"
-backgroundColor="#FFFFFF"
+backgroundColor="#000000"
 secondaryBackgroundColor="#F0F2F6"
 textColor="#262730"
 font="sans serif"
@@ -23,7 +23,7 @@ primaryColor="red"
 
 st.title('**WELL PRODUCTION FORECASTING WITH TIME SERIES ANALYSIS**')
 st.markdown('**This is first project in data science**')
-with st.expander("Brief explanation"):
+with st.expander("In Brief"):
      st.write("""
          **Decline curve analysis (DCA) is a graphical procedure used for analyzing declining production rates and forecasting future performance of oil and gas wells. Oil and gas production rates decline as a function of time; loss of reservoir pressure, or changing relative volumes of the produced fluids, are usually the cause. Fitting a line through the performance history and assuming this same trend will continue in future forms the basis of DCA concept(PetroWiki).
          The basic assumption in this procedure is that whatever causes controlled the trend of a curve in the past will continue to govern its trend in the future in a uniform manner. J.J. Arps collected these ideas into a comprehensive set of equations defining the exponential, hyperbolic and harmonic declines.(Representative figure below)
