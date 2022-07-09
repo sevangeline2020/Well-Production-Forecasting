@@ -68,6 +68,10 @@ ax.plot(moving_avg, color='red')
 ax.plot(ts_log)
 st.pyplot()
 
+ts_log_ewma_diff = ts_log - exp_weighted_avg
+ax.plot(test_stationarity(ts_log_ewma_diff))
+st.pyplot()
+
 ts_log_moving_avg_diff = ts_log - moving_avg
 ts_log_moving_avg_diff.dropna(inplace =True)
 fig, ax = plt.subplots(figsize=(10,6))
