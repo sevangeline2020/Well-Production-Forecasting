@@ -158,6 +158,6 @@ fig, ax = plt.subplots(figsize=(10,5)
 #st.pyplot.gca().legend(('Original Decline Curve','ARIMA Model Decline Curve')
 if selected == "greetings":
  st.write("Thank You")
-                       
+#_____________________________________________                      
 
 
