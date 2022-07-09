@@ -2,15 +2,15 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pylab as plt 
-
 from matplotlib.pylab import rcParams
 rcParams['figure.figsize']= 15, 16
-
 import warnings
 warnings.filterwarnings('ignore')
 from pandas import read_csv
 from pandas import datetime
 from matplotlib import pyplot
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.arima_model import ARIMA
 
 primaryColor="#F63366"
 backgroundColor="#FFFFFF"
@@ -19,7 +19,7 @@ textColor="#262730"
 font="sans serif"
 base="light"
 primaryColor="red"
-st.markdown('My first project in data science')
+st.markdown('**This is first project in data science**')
 st.title('**WELL PRODUCTION FORECASTING WITH TIME SERIES ANALYSIS**')
 with st.expander("brief explanation"):
      st.write("""
@@ -55,8 +55,6 @@ st.line_chart(ts)
 st.pyplot()
 
 st.header('**DICKYFULLER TEST**')
-from statsmodels.tsa.stattools import adfuller
-@st.cache
 def test_stationarity(timeseries):
     rolmean = timeseries.rolling(window=10).mean()
     rolstd = timeseries.rolling(window=10).std()
@@ -68,16 +66,14 @@ def test_stationarity(timeseries):
     std = plt.plot(rolstd, label = 'Rolling Standard Deviation')
     st.legend(loc='best')
     st.title('Rolling Mean & Standard Deviation')
-    
-    #Perform Dickey-Fuller test:
     st.write('Results of Dickey-Fuller Test:')
     dftest = adfuller(timeseries, autolag='AIC')
     dfoutput = pd.Series(dftest[0:4], index=['Test Statistic','p-value','#Lags Used','Number of Observations Used'])
     for key,value in dftest[4].items():
         dfoutput['Critical Value (%s)'%key] = value
     st.write(dfoutput)
-test_stationarity(ts)
-st.pyplot_chart()
+adfuller(ts)
+st.pyplot()
 
 
 st.header('TREND ELIMINATION-MOVING AVERAGE APPROACH')
@@ -143,7 +139,7 @@ st.pyplot.axhline(y=1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='
 st.pyplot.title('Partial Autocorrelation Function')
 st.pyplot.tight_layout()
 
-from statsmodels.tsa.arima_model import ARIMA
+
 model_AR = ARIMA(ts_log, order=(2, 1, 0))  
 results_ARIMA_AR = model_AR.fit(disp=-1)  
 st.pyplot.figure(figsize=(10,5))
