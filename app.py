@@ -68,8 +68,7 @@ def test_stationarity(timeseries):
     std = plt.plot(rolstd, label = 'Rolling Standard Deviation')
     st.legend(loc='best')
     st.title('Rolling Mean & Standard Deviation')
-    st.(block=False)
-
+    
     #Perform Dickey-Fuller test:
     st.write('Results of Dickey-Fuller Test:')
     dftest = adfuller(timeseries, autolag='AIC')
