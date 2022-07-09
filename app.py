@@ -13,14 +13,6 @@ from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima_model import ARIMA
 
 primaryColor="#F63366"
-page_bg_img = '''
-<style>
-body {
-background-image: url("https://www.google.com/search?q=background+images&tbm=isch&source=iu&ictx=1&vet=1&fir=EgJ02qsxXwmT4M%252C0aKRK2RZxWjguM%252C_%253BgqzX1TfESdsqZM%252C0aKRK2RZxWjguM%252C_%253Bx-lvRKo4RLNHJM%252CbKJ3gdlWTtaNoM%252C_%253BGM5UfQxGtdz0KM%252CkwAYUakaqyqIYM%252C_%253B9KN8wQ21Z2njvM%252CWliKd5L_7jKt4M%252C_%253BmpJpsUCpFwmlgM%252C0aKRK2RZxWjguM%252C_%253BzUfyl7JUwahNLM%252Ci5oUTEWCwPkbrM%252C_%253BseO4x3ec-jaFjM%252CLCj5QrwH7r-G0M%252C_%253BtbJ__Fzk_2VozM%252CLmxEG2fpBgMKnM%252C_%253Bu-T79F0t_SHhHM%252CW9kiGKk9q956IM%252C_%253Bdr-0MgrP6roj-M%252CbKJ3gdlWTtaNoM%252C_%253BoyYIYwb0H1yz7M%252C0aKRK2RZxWjguM%252C_%253BfYz9WKKfjEKvCM%252CVBhN99_jMoH1jM%252C_%253BkXwag02GWx2cZM%252C5tfPhns_thvldM%252C_%253BlXxjZufOj2CftM%252CX5C_zPZvj6iYmM%252C_%253BwJnaPLBsFDC_-M%252CLAIZRd0gOwrSbM%252C_%253B7RXTJRZv8VXYCM%252Cvyk6olgVmPZEaM%252C_&usg=AI4_-kTGIgu7F6w2mTp2rWfhHgJ7QX1Mmg&sa=X&ved=2ahUKEwizu7Hjjev4AhXZ7jgGHX-OC0UQ9QF6BAgOEAE#imgrc=zUfyl7JUwahNLM");
-background-size: cover;
-}
-</style>
-'''
 backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#F0F2F6"
 textColor="#262730"
