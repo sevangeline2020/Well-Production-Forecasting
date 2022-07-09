@@ -48,27 +48,27 @@ from pandas.plotting import autocorrelation_plot
 autocorrelation_plot(data)
 st.pyplot()
 
-st.header('STATIONARITY REQUIREMENT OF TIME SERIES')
+st.header('**STATIONARITY REQUIREMENT OF TIME SERIES**')
 #Let's visualize the production trend available for the well.
 ts = data['Production_rate'][1:]
 st.line_chart(ts)
 st.pyplot()
 
-st.header('DICKYFULLER TEST')
+st.header('**DICKYFULLER TEST**')
 from statsmodels.tsa.stattools import adfuller
-
+@st.cache
 def test_stationarity(timeseries):
     rolmean = timeseries.rolling(window=10).mean()
     rolstd = timeseries.rolling(window=10).std()
      
-    fig, ax = plt.subplots(figsize=(10,6))
+    fig, ax = plt.figure(figsize=(10,6))
     st.pyplot(fig, figsize=(10, 6))
     orig = plt.plot(timeseries, label ='Original')
     mean = plt.plot(rolmean, label = 'Rolling Mean')
     std = plt.plot(rolstd, label = 'Rolling Standard Deviation')
-    st.pyplot.legend(loc='best')
-    st.plot.title('Rolling Mean & Standard Deviation')
-    st.plot(block=False)
+    st.legend(loc='best')
+    st.title('Rolling Mean & Standard Deviation')
+    st.(block=False)
 
     #Perform Dickey-Fuller test:
     st.write('Results of Dickey-Fuller Test:')
