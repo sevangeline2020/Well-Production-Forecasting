@@ -76,7 +76,7 @@ def test_stationarity(timeseries):
     for key,value in dftest[4].items():
         dfoutput['Critical Value (%s)'%key] = value
     st.write(dfoutput)
-st.test_stationarity(ts)
+test_stationarity(ts)
 st.pyplot_chart()
 
 
