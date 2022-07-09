@@ -55,7 +55,6 @@ ts = data['Production_rate'][1:]
 st.line_chart(ts)
 st.pyplot()
 
-st.header('**DICKEY FULLER TEST**')
 st.header('**TREND ELIMINATION-MOVING AVERAGE APPROACH**')
 ts_log = np.log(ts)
 fig, ax = plt.subplots(figsize=(10,6))
@@ -93,11 +92,6 @@ ax.plot(ts_log.shift())
 ax.plot(ts_log.diff())
 st.pyplot()
 
-ts_log_diff.dropna(inplace=True)
-fig, ax = plt.subplots(figsize=(10,6))
-st.line_chart(ts_log_diff)
-st.pyplot()
-
 st.header('DECLINE CURVE FORECASTING-ARIMA')
 ts_log_diff_active = ts_log_diff
 from statsmodels.tsa.stattools import acf, pacf
@@ -105,23 +99,21 @@ lag_acf = acf(ts_log_diff_active, nlags=5)
 lag_pacf = pacf(ts_log_diff_active, nlags=5, method='ols')
 fig, ax = plt.subplots(figsize=(10,6))
 #Plot ACF: 
-plt.subplot(121) 
+plt.subplotS(121) 
 ax.plot(lag_acf)
-st.axhline(y=0,linestyle='--',color='gray')
-st.axhline(y=-1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
-st.axhline(y=1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
-st.title('Autocorrelation Function')
-#plt.figure(figsize=(15,5))
+plt.axhline(y=0,linestyle='--',color='gray')
+plt.axhline(y=-1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
+plt.axhline(y=1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
+ax.set_title('Autocorrelation Function')
 
-#Plot PACF:
-st.subplot(122)
+st.subplots(122)
 st.plot(lag_pacf)
-st.axhline(y=0,linestyle='--',color='gray')
-st.axhline(y=-1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
-st.axhline(y=1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
-st.title('Partial Autocorrelation Function')
+plt.axhline(y=0,linestyle='--',color='gray')
+plt.axhline(y=-1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
+plt.axhline(y=1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
+plt.title('Partial Autocorrelation Function')
 st.tight_layout()
-st.pyplot()
+st.pyplot(fig)
 
 
 model_AR = ARIMA(ts_log, order=(2, 1, 0))  
