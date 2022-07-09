@@ -42,7 +42,6 @@ st.header('**DATETIME ANALYSIS**')
 dateparse = lambda dates: pd.datetime.strptime(dates, '%m/%d/%Y')
 data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv",names = column, parse_dates=['Month'], index_col=['Month'],date_parser=dateparse);
 st.line_chart(data)
-st.pyplot()
 
 st.header('**AUTOCORRELATION PLOT**')
 from pandas.plotting import autocorrelation_plot
@@ -53,7 +52,6 @@ st.header('**STATIONARITY REQUIREMENT OF TIME SERIES**')
 #Let's visualize the production trend available for the well.
 ts = data['Production_rate'][1:]
 st.line_chart(ts)
-st.pyplot()
 
 st.header('**TREND ELIMINATION-MOVING AVERAGE APPROACH**')
 ts_log = np.log(ts)
