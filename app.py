@@ -68,12 +68,9 @@ ax.plot(ts_log)
 st.pyplot(fig)
 
 ts_log_moving_avg_diff = ts_log - moving_avg
-st.line_chart(ts_log_moving_avg_diff)
-fig, ax = plt.subplots(figsize=(10,6))
 ts_log_moving_avg_diff.dropna(inplace =True)
 fig, ax = plt.subplots(figsize=(10,6))
 ax.plot(ts_log_moving_avg_diff)
-ax.plot(test_stationarity(ts_log_moving_avg_diff))
 st.pyplot(fig)
 
 st.header('TREND ELIMINATION-EXPONENTIALLY WEIGHTED MOVING AVERAGE APPROACH')
