@@ -108,7 +108,7 @@ ax.plot(exp_weighted_avg, color ='red')
 st.pyplot(fig)
 
 ts_log_ewma_diff = ts_log - exp_weighted_avg
-test_stationarity(ts_log_ewma_diff)
+st.line_chart(ts_log_ewma_diff)
 st.pyplot()
 
 ts_log_diff = ts_log - ts_log.shift()
