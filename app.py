@@ -13,27 +13,36 @@ from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima_model import ARIMA
 
 primaryColor="#F63366"
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://www.google.com/search?q=background+images&tbm=isch&source=iu&ictx=1&vet=1&fir=EgJ02qsxXwmT4M%252C0aKRK2RZxWjguM%252C_%253BgqzX1TfESdsqZM%252C0aKRK2RZxWjguM%252C_%253Bx-lvRKo4RLNHJM%252CbKJ3gdlWTtaNoM%252C_%253BGM5UfQxGtdz0KM%252CkwAYUakaqyqIYM%252C_%253B9KN8wQ21Z2njvM%252CWliKd5L_7jKt4M%252C_%253BmpJpsUCpFwmlgM%252C0aKRK2RZxWjguM%252C_%253BzUfyl7JUwahNLM%252Ci5oUTEWCwPkbrM%252C_%253BseO4x3ec-jaFjM%252CLCj5QrwH7r-G0M%252C_%253BtbJ__Fzk_2VozM%252CLmxEG2fpBgMKnM%252C_%253Bu-T79F0t_SHhHM%252CW9kiGKk9q956IM%252C_%253Bdr-0MgrP6roj-M%252CbKJ3gdlWTtaNoM%252C_%253BoyYIYwb0H1yz7M%252C0aKRK2RZxWjguM%252C_%253BfYz9WKKfjEKvCM%252CVBhN99_jMoH1jM%252C_%253BkXwag02GWx2cZM%252C5tfPhns_thvldM%252C_%253BlXxjZufOj2CftM%252CX5C_zPZvj6iYmM%252C_%253BwJnaPLBsFDC_-M%252CLAIZRd0gOwrSbM%252C_%253B7RXTJRZv8VXYCM%252Cvyk6olgVmPZEaM%252C_&usg=AI4_-kTGIgu7F6w2mTp2rWfhHgJ7QX1Mmg&sa=X&ved=2ahUKEwizu7Hjjev4AhXZ7jgGHX-OC0UQ9QF6BAgOEAE#imgrc=zUfyl7JUwahNLM");
+background-size: cover;
+}
+</style>
+'''
 backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#F0F2F6"
 textColor="#262730"
 font="sans serif"
 base="dark"
 primaryColor="red"
-st.markdown('**This is first project in data science**')
+
 st.title('**WELL PRODUCTION FORECASTING WITH TIME SERIES ANALYSIS**')
+st.markdown('**This is first project in data science**')
 with st.expander("brief explanation"):
      st.write("""
-         Decline curve analysis (DCA) is a graphical procedure used for analyzing declining production rates and forecasting future performance of oil and gas wells. Oil and gas production rates decline as a function of time; loss of reservoir pressure, or changing relative volumes of the produced fluids, are usually the cause. Fitting a line through the performance history and assuming this same trend will continue in future forms the basis of DCA concept(PetroWiki).
+         **Decline curve analysis (DCA) is a graphical procedure used for analyzing declining production rates and forecasting future performance of oil and gas wells. Oil and gas production rates decline as a function of time; loss of reservoir pressure, or changing relative volumes of the produced fluids, are usually the cause. Fitting a line through the performance history and assuming this same trend will continue in future forms the basis of DCA concept(PetroWiki).
          The basic assumption in this procedure is that whatever causes controlled the trend of a curve in the past will continue to govern its trend in the future in a uniform manner. J.J. Arps collected these ideas into a comprehensive set of equations defining the exponential, hyperbolic and harmonic declines.(Representative figure below)
-         The major application of DCA in the industry today is still based on equations and curves described by Arps. Arps applied the equation of Hyperbola to define three general equations to model production declines.
+         The major application of DCA in the industry today is still based on equations and curves described by Arps. Arps applied the equation of Hyperbola to define three general equations to model production declines.**
          """)
      st.image("OIL WELL.jpg")
 
 st.header('**PROBLEM STATEMENT**')
-st.subheader('This project aims at replacing the traditional DCA and discusses the application of the widely accepted concepts of time series analysis for forecasting well production data by analyzing statistical trends from historical data.')
+st.subheader('**This project aims at replacing the traditional DCA and discusses the application of the widely accepted concepts of time series analysis for forecasting well production data by analyzing statistical trends from historical data.**')
 
 st.header('**SAMPLE DATASET**')
-column = ['Month','Production_rate']
+column = ['**Month','Production_rate**']
 data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv", names = column);
 st.table(data)
 
