@@ -55,22 +55,7 @@ ts = data['Production_rate'][1:]
 st.line_chart(ts)
 st.pyplot()
 
-fig, ax = plt.subplots(figsize=(10,6))
-orig = ax.plot(timeseries, label ='Original')
-mean = ax.plot(rolmean, label = 'Rolling Mean')
-std = ax.plot(rolstd, label = 'Rolling Standard Deviation')
-ax.legend(loc='best')
-st.title('Rolling Mean & Standard Deviation')
-st.write('Results of Dickey-Fuller Test:')
-dftest = adfuller(timeseries, autolag='AIC')
-dfoutput = pd.Series(dftest[0:4], index=['Test Statistic','p-value','#Lags Used','Number of Observations Used'])
-for key,value in dftest[4].items():
-    dfoutput['Critical Value (%s)'%key] = value
-st.write(dfoutput)
-st.pyplot(fig)
-
-
-
+st.header('**DICKEY FULLER TEST**')
 st.header('**TREND ELIMINATION-MOVING AVERAGE APPROACH**')
 ts_log = np.log(ts)
 fig, ax = plt.subplots(figsize=(10,6))
