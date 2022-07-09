@@ -11,6 +11,7 @@ from pandas import datetime
 from matplotlib import pyplot
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.tsa.stattools import acf, pacf
 
 primaryColor="#F63366"
 backgroundColor="#FFFFFF"
@@ -94,12 +95,11 @@ st.pyplot()
 
 st.header('DECLINE CURVE FORECASTING-ARIMA')
 ts_log_diff_active = ts_log_diff
-from statsmodels.tsa.stattools import acf, pacf
 lag_acf = acf(ts_log_diff_active, nlags=5)
 lag_pacf = pacf(ts_log_diff_active, nlags=5, method='ols')
 fig, ax = plt.subplots(figsize=(10,6))
 #Plot ACF: 
-plt.subplotS(121) 
+plt.subplots(121) 
 ax.plot(lag_acf)
 plt.axhline(y=0,linestyle='--',color='gray')
 plt.axhline(y=-1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
@@ -112,7 +112,7 @@ plt.axhline(y=0,linestyle='--',color='gray')
 plt.axhline(y=-1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
 plt.axhline(y=1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
 plt.title('Partial Autocorrelation Function')
-st.tight_layout()
+plt.tight_layout()
 st.pyplot(fig)
 
 
