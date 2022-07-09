@@ -14,7 +14,7 @@ from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.stattools import acf, pacf
 
 selected = option_menu(
-       menu_title = None ,#"Main Menu",
+       menu_title = '**WELL PRODUCTION FORECASTING IN TIME SERIES ANALYSIS**',
        options = ["THEORY","VISUALIZATION-1","VISUALIZATION-2"],
        icons = ["book","trend","graph"],
        menu_icon = "menu-button",
