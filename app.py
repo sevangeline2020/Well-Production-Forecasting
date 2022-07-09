@@ -13,6 +13,15 @@ from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.stattools import acf, pacf
 
+selected = option_menu(
+       menu_title = None ,#"Main Menu",
+       options = ["THEORY","VISUALIZATION-1","VISUALIZATION-2"],
+       icons = ["book","trend","graph"],
+       menu_icon = "menu-button",
+       default_index = 0,
+       orientation = "horizontal",  #to make the menubar horizontal 
+    )
+
 st.title('**WELL PRODUCTION FORECASTING IN TIME SERIES ANALYSIS**')
 st.markdown("🎁""**This is Evangeline's first DATA SCIENCE project**""👈")
 st.write("""
