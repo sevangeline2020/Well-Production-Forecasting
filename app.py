@@ -80,10 +80,6 @@ ax.plot(ts_log)
 ax.plot(exp_weighted_avg, color ='red')
 st.pyplot()
 
-ts_log_ewma_diff = ts_log - exp_weighted_avg
-ax.plot(ts_log_ewma_diff)
-st.pyplot()
-
 ts_log_diff = ts_log - ts_log.shift()
 fig, ax = plt.subplots(figsize=(10,6))
 ax.plot(ts_log_diff)
