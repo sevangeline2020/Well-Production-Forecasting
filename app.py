@@ -63,7 +63,6 @@ st.pyplot(fig)
 
 moving_avg = ts_log.rolling(10).mean()
 fig, ax = plt.subplots(figsize=(10,6))
-st.pyplot.figure(figsize=(10,6))
 ax.plot(moving_avg, color='red')
 st.pyplot.plot(ts_log)
 
