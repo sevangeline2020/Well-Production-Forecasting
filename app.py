@@ -34,7 +34,7 @@ st.header('**PROBLEM STATEMENT**')
 st.subheader('**This project aims at replacing the traditional DCA and discusses the application of the widely accepted concepts of time series analysis for forecasting well production data by analyzing statistical trends from historical data.**')
 
 st.header('**SAMPLE DATASET**')
-column = ['Month','**Production_rate']
+column = ['Month','Production_rate']
 data = pd.read_csv("ProductionData2.xlsx - Sheet1.csv", names = column);
 st.table(data)
 
