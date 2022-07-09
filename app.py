@@ -104,14 +104,12 @@ lag_acf = acf(ts_log_diff_active, nlags=5)
 lag_pacf = pacf(ts_log_diff_active, nlags=5, method='ols')
 fig, ax = plt.subplots(figsize=(10,6))
 #Plot ACF: 
-plt.subplots(121) 
 ax.plot(lag_acf)
 plt.axhline(y=0,linestyle='--',color='gray')
 plt.axhline(y=-1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
 plt.axhline(y=1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
 ax.set_title('Autocorrelation Function')
 
-st.subplots(122)
 st.plot(lag_pacf)
 plt.axhline(y=0,linestyle='--',color='gray')
 plt.axhline(y=-1.96/np.sqrt(len(ts_log_diff_active)),linestyle='--',color='gray')
@@ -137,10 +135,10 @@ ax.title('RSS: %.4f'% sum((results_ARIMA_MA.fittedvalues-ts_log_diff)**2))
 
 model = ARIMA(ts_log, order=(2, 1, 2))  
 results_ARIMA = model.fit(disp=-1)  
-st.pyplot.figure(figsize=(10,5))
-st.pyplot.plot(ts_log_diff_active)
-st.pyplot.plot(results_ARIMA.fittedvalues, color='red')
-st.pyplot.title('RSS: %.4f'% sum((results_ARIMA.fittedvalues-ts_log_diff)**2))
+fig, ax = plt.subplots(figsize=(10,5))
+ax.plot(ts_log_diff_active)
+ax.plot(results_ARIMA.fittedvalues, color='red')
+ax.title('RSS: %.4f'% sum((results_ARIMA.fittedvalues-ts_log_diff)**2))
 
 predictions_ARIMA_diff = pd.Series(results_ARIMA_AR.fittedvalues, copy=True)
 st.write(predictions_ARIMA_diff())
@@ -153,10 +151,9 @@ predictions_ARIMA_log = predictions_ARIMA_log.add(predictions_ARIMA_diff_cumsum,
 st.write(predictions_ARIMA_log)
 
 predictions_ARIMA = np.exp(predictions_ARIMA_log)
-st.pyplot.figure(figsize=(10,5))
-st.pyplot.plot()
-st.pyplot.plot(predictions_ARIMA)
-
+fig, ax = plt.subplots(figsize=(10,5)
+ax.plot(predictions_ARIMA)
+st.pyplot()                       
 st.pyplot.gca().legend(('Original Decline Curve','ARIMA Model Decline Curve'))
 
 st.balloons()
