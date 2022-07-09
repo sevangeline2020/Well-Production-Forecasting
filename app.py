@@ -57,7 +57,6 @@ st.pyplot()
 
 st.header('**TREND ELIMINATION-MOVING AVERAGE APPROACH**')
 ts_log = np.log(ts)
-fig, ax = plt.subplots(figsize=(10,6))
 st.pyplot(fig, figsize=(10, 6))
 ax.plot(ts_log, label= 'log(Original)')
 st.pyplot(fig)
