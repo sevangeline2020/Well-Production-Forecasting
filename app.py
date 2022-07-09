@@ -67,7 +67,7 @@ def test_stationarity(timeseries):
     std = ax.plot(rolstd, label = 'Rolling Standard Deviation')
     ax.legend(loc='best')
     st.title('Rolling Mean & Standard Deviation')
-    st.pyplot(fig)
+    st.pyplot()
    
     
     #Perform Dickey-Fuller test:
@@ -77,8 +77,8 @@ def test_stationarity(timeseries):
     for key,value in dftest[4].items():
         dfoutput['Critical Value (%s)'%key] = value
     st.write(dfoutput)
-    return test_stationarity()
-    st.pyplot(fig)
+    return test_stationarity(ts)
+    st.pyplot()
 
 
 
