@@ -67,7 +67,7 @@ def test_stationarity(timeseries):
     mean = ax.plot(rolmean, label = 'Rolling Mean')
     std = ax.plot(rolstd, label = 'Rolling Standard Deviation')
     ax.legend(loc='best')
-    st..title('Rolling Mean & Standard Deviation')
+    st.title('Rolling Mean & Standard Deviation')
     st.pyplot(fig)
    
     
