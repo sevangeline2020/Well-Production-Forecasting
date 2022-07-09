@@ -55,8 +55,8 @@ ts = data['Production_rate'][1:]
 st.line_chart(ts)
 st.pyplot()
 
-rolmean = timeseries.rolling(window=10).mean()
-rolstd = timeseries.rolling(window=10).std()
+rolmean = timeseries.rolling(window=10,center=False).mean()
+rolstd = timeseries.rolling(window=10,center=False).std()
 fig, ax = plt.subplots(figsize=(10,6))
 orig = ax.plot(timeseries, label ='Original')
 mean = ax.plot(rolmean, label = 'Rolling Mean')
