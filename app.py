@@ -17,7 +17,7 @@ backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#F0F2F6"
 textColor="#262730"
 font="sans serif"
-base="light"
+base="dark"
 primaryColor="red"
 st.markdown('**This is first project in data science**')
 st.title('**WELL PRODUCTION FORECASTING WITH TIME SERIES ANALYSIS**')
@@ -58,7 +58,7 @@ st.header('**TREND ELIMINATION-MOVING AVERAGE APPROACH**')
 ts_log = np.log(ts)
 fig, ax = plt.subplots(figsize=(10,6))
 st.pyplot(fig, figsize=(10, 6))
-st.line_chart(ts_log, label= 'log(Original)')
+st.plotly_chart(ts_log, label= 'log(Original)')
 st.pyplot()
 
 moving_avg = ts_log.rolling(10).mean()
