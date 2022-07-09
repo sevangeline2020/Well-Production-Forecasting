@@ -94,7 +94,7 @@ st.pyplot(fig)
 
 ts_log_diff.dropna(inplace=True)
 fig, ax = plt.subplots(figsize=(10,6))
-test_stationarity(ts_log_diff))
+test_stationarity(ts_log_diff)
 st.pyplot()
 
 st.header('DECLINE CURVE FORECASTING-ARIMA')
