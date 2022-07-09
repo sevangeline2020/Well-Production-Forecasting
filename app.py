@@ -75,9 +75,10 @@ st.pyplot(fig)
 
 st.header('TREND ELIMINATION-EXPONENTIALLY WEIGHTED MOVING AVERAGE APPROACH')
 exp_weighted_avg = ts_log.ewm(halflife=2).mean()
-st.pyplot.figure(figsize=(10,6))
-st.pyplot.plot(ts_log)
-st.pyplot.plot(exp_weighted_avg, color ='red')
+fig, ax = plt.subplots(figsize=(10,6))
+ax.plot(ts_log)
+ax.plot(exp_weighted_avg, color ='red')
+st.pyplot(fig)
 
 ts_log_ewma_diff = ts_log - exp_weighted_avg
 st.line_chart(test_stationarity(ts_log_ewma_diff))
