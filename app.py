@@ -73,7 +73,7 @@ def test_stationarity(timeseries):
     
     #Perform Dickey-Fuller test:
     st.write('Results of Dickey-Fuller Test:')
-    dftest = ax.adfuller(timeseries, autolag='AIC')
+    dftest = adfuller(timeseries, autolag='AIC')
     dfoutput = pd.Series(dftest[0:4], index=['Test Statistic','p-value','#Lags Used','Number of Observations Used'])
     for key,value in dftest[4].items():
         dfoutput['Critical Value (%s)'%key] = value
@@ -100,7 +100,7 @@ fig, ax = plt.subplots(figsize=(10,6))
 ax.plot(ts_log_moving_avg_diff)
 st.pyplot(fig)
 
-st.header('TREND ELIMINATION-EXPONENTIALLY WEIGHTED MOVING AVERAGE APPROACH')
+st.header('**TREND ELIMINATION-EXPONENTIALLY WEIGHTED MOVING AVERAGE APPROACH**')
 exp_weighted_avg = ts_log.ewm(halflife=2).mean()
 fig, ax = plt.subplots(figsize=(10,6))
 ax.plot(ts_log)
@@ -121,8 +121,8 @@ st.pyplot(fig)
 
 ts_log_diff.dropna(inplace=True)
 fig, ax = plt.subplots(figsize=(10,6))
-test_stationarity(ts_log_diff)
-st.pyplot()
+ax.plot(ts_log_diff)
+st.pyplot(fig)
 
 st.header('DECLINE CURVE FORECASTING-ARIMA')
 ts_log_diff_active = ts_log_diff
