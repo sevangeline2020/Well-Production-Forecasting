@@ -62,9 +62,10 @@ ax.plot(ts_log, label= 'log(Original)')
 st.pyplot(fig)
 
 moving_avg = ts_log.rolling(10).mean()
+fig, ax = plt.subplots(figsize=(10,6))
 st.pyplot.figure(figsize=(10,6))
+ax.plot(moving_avg, color='red')
 st.pyplot.plot(ts_log)
-st.pyplot.plot(moving_avg, color='red')
 
 ts_log_moving_avg_diff = ts_log - moving_avg
 st.line_chart(ts_log_moving_avg_diff)
