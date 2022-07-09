@@ -152,7 +152,8 @@ st.write(predictions_ARIMA_log)
 
 predictions_ARIMA = np.exp(predictions_ARIMA_log)
 fig, ax = plt.subplots(figsize=(10,5)
-ax.plot(predictions_ARIMA)
+ax.plot(ts)                       
+st.line_chart(predictions_ARIMA)
 st.pyplot()                       
 st.pyplot.gca().legend(('Original Decline Curve','ARIMA Model Decline Curve'))
 
