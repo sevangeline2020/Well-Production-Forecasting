@@ -158,3 +158,5 @@ fig, ax = plt.subplots(figsize=(10,5)
 #st.pyplot.gca().legend(('Original Decline Curve','ARIMA Model Decline Curve'))
 
 #st.balloons()
+if __name__ == '__main__':
+      main()
