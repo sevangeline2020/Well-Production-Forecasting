@@ -13,14 +13,6 @@ from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.stattools import acf, pacf
 
-primaryColor="#F63366"
-backgroundColor="#OOOOOO"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
-font="sans serif"
-base="dark"
-primaryColor="red"
-
 st.title('**WELL PRODUCTION FORECASTING WITH TIME SERIES ANALYSIS**')
 st.markdown('**This is first project in data science**')
 st.write("""
