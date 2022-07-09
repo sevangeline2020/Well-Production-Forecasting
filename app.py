@@ -23,13 +23,12 @@ primaryColor="red"
 
 st.title('**WELL PRODUCTION FORECASTING WITH TIME SERIES ANALYSIS**')
 st.markdown('**This is first project in data science**')
-with st.expander("In Brief"):
-     st.write("""
+st.write("""
          **Decline curve analysis (DCA) is a graphical procedure used for analyzing declining production rates and forecasting future performance of oil and gas wells. Oil and gas production rates decline as a function of time; loss of reservoir pressure, or changing relative volumes of the produced fluids, are usually the cause. Fitting a line through the performance history and assuming this same trend will continue in future forms the basis of DCA concept(PetroWiki).
          The basic assumption in this procedure is that whatever causes controlled the trend of a curve in the past will continue to govern its trend in the future in a uniform manner. J.J. Arps collected these ideas into a comprehensive set of equations defining the exponential, hyperbolic and harmonic declines.(Representative figure below)
          The major application of DCA in the industry today is still based on equations and curves described by Arps. Arps applied the equation of Hyperbola to define three general equations to model production declines.**
          """)
-     st.image("OIL WELL.jpg")
+st.image("OIL WELL.jpg")
 
 st.header('**PROBLEM STATEMENT**')
 st.subheader('**This project aims at replacing the traditional DCA and discusses the application of the widely accepted concepts of time series analysis for forecasting well production data by analyzing statistical trends from historical data.**')
@@ -118,13 +117,13 @@ plt.title('Partial Autocorrelation Function')
 plt.tight_layout()
 st.pyplot(fig)
 
-
 model_AR = ARIMA(ts_log, order=(2, 1, 0))  
 results_ARIMA_AR = model_AR.fit(disp=-1)  
 fig, ax = plt.subplots(figsize=(10,5))
 ax.plot(ts_log_diff_active)
 ax.plot(results_ARIMA_AR.fittedvalues, color='red')
 ax.title('RSS: %.4f'% sum((results_ARIMA_AR.fittedvalues-ts_log_diff)**2))
+st.pyplot(fig)
 
 model_MA = ARIMA(ts_log, order=(0, 1, 2))  
 results_ARIMA_MA = model_MA.fit(disp=-1) 
@@ -132,6 +131,7 @@ fig, ax = plt.subplots(figsize=(10,5))
 ax.plot(ts_log_diff_active)
 ax.plot(results_ARIMA_MA.fittedvalues, color='red')
 ax.title('RSS: %.4f'% sum((results_ARIMA_MA.fittedvalues-ts_log_diff)**2))
+st.pyplot(fig)
 
 model = ARIMA(ts_log, order=(2, 1, 2))  
 results_ARIMA = model.fit(disp=-1)  
@@ -139,20 +139,15 @@ fig, ax = plt.subplots(figsize=(10,5))
 ax.plot(ts_log_diff_active)
 ax.plot(results_ARIMA.fittedvalues, color='red')
 ax.title('RSS: %.4f'% sum((results_ARIMA.fittedvalues-ts_log_diff)**2))
+st.pyplot(fig)
 
 predictions_ARIMA_diff = pd.Series(results_ARIMA_AR.fittedvalues, copy=True)
-st.write(predictions_ARIMA_diff())
-
 predictions_ARIMA_diff_cumsum = predictions_ARIMA_diff.cumsum()
-st.write(predictions_ARIMA_diff_cumsum)
-
 predictions_ARIMA_log = pd.Series(ts_log.iloc[0], index=ts_log.index)
 predictions_ARIMA_log = predictions_ARIMA_log.add(predictions_ARIMA_diff_cumsum,fill_value=0)
-st.write(predictions_ARIMA_log)
-
 predictions_ARIMA = np.exp(predictions_ARIMA_log)
 fig, ax = plt.subplots(figsize=(10,5)
-#ax.plot(ts)                       
-#st.line_chart(predictions_ARIMA)
-#st.pyplot()                       
-#st.pyplot.gca().legend(('Original Decline Curve','ARIMA Model Decline Curve')
+ax.plot(ts)                       
+st.line_chart(predictions_ARIMA)
+st.pyplot()                       
+st.pyplot.gca().legend(('Original Decline Curve','ARIMA Model Decline Curve')
