@@ -79,7 +79,7 @@ def test_stationarity(timeseries):
         dfoutput['Critical Value (%s)'%key] = value
     st.write(dfoutput)
     return test_stationarity()
-st.pyplot(fig)
+
 
 
 st.header('**TREND ELIMINATION-MOVING AVERAGE APPROACH**')
