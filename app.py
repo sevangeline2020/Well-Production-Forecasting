@@ -155,6 +155,8 @@ fig, ax = plt.subplots(figsize=(10,5)
 #ax.plot(ts)                       
 #st.line_chart(predictions_ARIMA)
 #st.pyplot()                       
-#st.pyplot.gca().legend(('Original Decline Curve','ARIMA Model Decline Curve'))
+#st.pyplot.gca().legend(('Original Decline Curve','ARIMA Model Decline Curve')
+                       
+st.write("Thank You")
 
 
