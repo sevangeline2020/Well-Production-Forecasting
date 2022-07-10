@@ -85,8 +85,39 @@ fig, ax = plt.subplots(figsize=(10,6))
 ax.plot(ts_log_diff)
 st.pyplot()
 
-model_AR = ARIMA(ts_log, order=(2, 1, 0))  
-results_ARIMA_AR = model_AR.fit(disp=-1)  
+st.header('**ARIMA MODEL**')
+st.image(
+from pandas import read_csv
+from pandas import datetime
+from statsmodels.tsa.arima_model import ARIMA
+from sklearn.metrics import mean_squared_error
+from math import sqrt
+# split into train and test sets
+X = data.values
+size = int(len(X) * 0.66)
+train, test = X[0:size], X[size:len(X)]
+history = [x for x in train]
+predictions = list()
+# walk-forward validation
+for t in range(len(test)):
+	model = ARIMA(history, order=(2, 1, 2))
+	model_fit = model.fit(disp=-1)
+	output = model_fit.forecast()
+	yhat = output[0]
+	predictions.append(yhat)
+	obs = test[t]
+	history.append(obs)
+	st.write('predicted=%f, expected=%f' % (yhat, obs))
 fig, ax = plt.subplots(figsize=(10,6))
-ax.plot(ts_log_diff_active)
-ax.plot(results_ARIMA_AR.fittedvalues, color='red')
+st.pyplot(fig)
+# evaluate forecasts
+rmse = sqrt(mean_squared_error(test,predictions))
+st.write('RMSE: %.4f'% np.sqrt(sum((predictions -test)**2)/len(ts)))
+
+# plot forecasts against actual outcomes
+
+ax.plot(predictions)
+ax.plot(test)
+st.pyplot()
+
+
