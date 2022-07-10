@@ -85,4 +85,6 @@ fig, ax = plt.subplots(figsize=(10,6))
 ax.plot(ts_log_diff)
 st.pyplot()
 
+st.header('**ARIMA MODEL**')
+st.image('Arima1.png')
 st.write("**Thank You**" '🙏')
