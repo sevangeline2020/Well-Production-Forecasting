@@ -14,7 +14,7 @@ from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.stattools import acf, pacf
 
 st.title('**WELL PRODUCTION FORECASTING IN TIME SERIES ANALYSIS**')
-st.markdown("🎁""**This is Evangeline's first DATA SCIENCE project**""👈")
+st.markdown("**This is 🎁Evangeline's first DATA SCIENCE project**"👈)
 st.write("""
          **Decline curve analysis (DCA) is a graphical procedure used for analyzing declining production rates and forecasting future performance of oil and gas wells. Oil and gas production rates decline as a function of time; loss of reservoir pressure, or changing relative volumes of the produced fluids, are usually the cause. Fitting a line through the performance history and assuming this same trend will continue in future forms the basis of DCA concept(PetroWiki).
          The basic assumption in this procedure is that whatever causes controlled the trend of a curve in the past will continue to govern its trend in the future in a uniform manner. J.J. Arps collected these ideas into a comprehensive set of equations defining the exponential, hyperbolic and harmonic declines.(Representative figure below)
@@ -85,39 +85,4 @@ fig, ax = plt.subplots(figsize=(10,6))
 ax.plot(ts_log_diff)
 st.pyplot()
 
-st.header('**ARIMA MODEL**')
-st.image(
-from pandas import read_csv
-from pandas import datetime
-from statsmodels.tsa.arima_model import ARIMA
-from sklearn.metrics import mean_squared_error
-from math import sqrt
-# split into train and test sets
-X = data.values
-size = int(len(X) * 0.66)
-train, test = X[0:size], X[size:len(X)]
-history = [x for x in train]
-predictions = list()
-# walk-forward validation
-for t in range(len(test)):
-	model = ARIMA(history, order=(2, 1, 2))
-	model_fit = model.fit(disp=-1)
-	output = model_fit.forecast()
-	yhat = output[0]
-	predictions.append(yhat)
-	obs = test[t]
-	history.append(obs)
-	st.write('predicted=%f, expected=%f' % (yhat, obs))
-fig, ax = plt.subplots(figsize=(10,6))
-st.pyplot(fig)
-# evaluate forecasts
-rmse = sqrt(mean_squared_error(test,predictions))
-st.write('RMSE: %.4f'% np.sqrt(sum((predictions -test)**2)/len(ts)))
-
-# plot forecasts against actual outcomes
-
-ax.plot(predictions)
-ax.plot(test)
-st.pyplot()
-
-
+st.write("**Thank You**" 🙏)
