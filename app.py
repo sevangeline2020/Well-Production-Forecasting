@@ -88,7 +88,7 @@ st.pyplot()
 st.header('**ARIMA MODEL**')
 st.image('Arima1.png')
 
-st.header('**PREDICTED AND ACTUAL FORECASTING REPRESSETATION WITH TRAINING AND TESTING**')
+st.header('**PREDICTED AND ACTUAL FORECASTING REPRESENTATION WITH TRAINING AND TESTING DATA**')
 st.image('Arima outcome.png')
 st.write("Mean absolute error = 67.58")
 st.write("Mean squared error = 6298.15")
