@@ -99,6 +99,4 @@ st.write("79.36086135537163")
 
 st.write("**Thank You**" '🙏')
 st.write("To get the source code click on the [link](https://colab.research.google.com/drive/1bh9Nu39j00z6agm_wZZ1S5Rx7gJJPca4?usp=sharing#scrollTo=voiXSbodxON_)")
-st.write("@contact[link](sevangeline2020@gmail.com)")
-
 
