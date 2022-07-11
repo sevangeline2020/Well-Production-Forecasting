@@ -88,14 +88,14 @@ st.pyplot()
 st.header('**ARIMA MODEL**')
 st.image('Arima1.png')
 
-st.header('**PREDICTED AND ACTUAL FORECASTING REPRESSETATION WITH TRAINING AND TESTING **')
+st.header('**PREDICTED AND ACTUAL FORECASTING REPRESSETATION WITH TRAINING AND TESTING**')
 st.image('Arima outcome.png')
-st.write("""Mean absolute error = 67.58
-            Mean squared error = 6298.15
-            Median absolute error = 63.09
-            Explain variance score = 0.79
-            R2 score = 0.78
-            79.36086135537163""")
+st.write("Mean absolute error = 67.58")
+st.write("Mean squared error = 6298.15")
+st.write("Median absolute error = 63.09")
+st.write("Explain variance score = 0.79")
+st.write("R2 score = 0.78")
+st.write("79.36086135537163")
 
 st.write("**Thank You**" '🙏')
 st.write("To get the source code click on the [link](https://colab.research.google.com/drive/1bh9Nu39j00z6agm_wZZ1S5Rx7gJJPca4?usp=sharing#scrollTo=voiXSbodxON_)")
